@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lebaso.de - Willkommen</title>
+    <link rel="icon" type="image/png" href="code.png">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f06, #f9a);
+            color: #333;
+            text-align: center;
+            overflow: hidden; /* Verhindert Scrollen während der Animation */
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            opacity: 0; /* Anfangs unsichtbar für Animation */
+            transform: translateY(20px); /* Startposition für Animation */
+            animation: fadeInUp 1s ease-out forwards; /* Animation anwenden */
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        a {
+            color: #f06;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #fff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            opacity: 0; /* Anfangs unsichtbar für Animation */
+            transform: translateY(20px); /* Startposition für Animation */
+            animation: fadeInUp 1s 0.5s ease-out forwards; /* Verzögerung für Animation */
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animation für das Hereinschweben der Elemente */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="code.png" alt="Logo">
+        <h1>Willkommen bei lebaso.de</h1>
+        <p>Wir freuen uns, Sie auf unserer Webseite begrüßen zu dürfen.</p>
+        <p>Bleiben Sie gespannt - hier entsteht etwas Großartiges!</p>
+    </div>
+    <footer>
+        <a href="#datenschutz">Datenschutz</a>
+        <a href="#impressum">Impressum</a>
+        <a href="mailto:contact@lebaso.de">Kontakt</a>
+    </footer>
+</body>
+</html>
