@@ -93,7 +93,36 @@
             text-decoration: underline;
         }
 
-        /* Animation für das Hereinschweben der Elemente */
+        /* Pop-up Hintergrund */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+
+        .popup-close {
+            cursor: pointer;
+            display: inline-block;
+            margin-left: 10px;
+            color: #f06;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -113,10 +142,72 @@
         <p>Wir freuen uns, Sie auf unserer Webseite begrüßen zu dürfen.</p>
         <p>Bleiben Sie gespannt - hier entsteht womöglich etwas Großartiges!</p>
     </div>
+
     <footer>
-        <a href="#datenschutz">Datenschutz</a>
-        <a href="#impressum">Impressum</a>
+        <a href="#" id="datenschutz-link">Datenschutz</a>
+        <a href="#" id="impressum-link">Impressum</a>
         <a href="mailto:contact@lebaso.de">Kontakt</a>
     </footer>
+
+    <div class="popup" id="datenschutz-popup">
+        <div class="popup-content">
+            <h2>Datenschutz</h2>
+            <p>Hier steht Ihr Datenschutz-Text.</p>
+            <span class="popup-close" id="datenschutz-close">Schließen</span>
+        </div>
+    </div>
+
+    <div class="popup" id="impressum-popup">
+        <div class="popup-content">
+            <h2>Impressum</h2>
+            <p>Hier steht Ihr Impressum-Text.</p>
+            <span class="popup-close" id="impressum-close">Schließen</span>
+        </div>
+    </div>
+
+    <script>
+        // Pop-up Elemente und Schaltflächen
+        const datenschutzPopup = document.getElementById('datenschutz-popup');
+        const impressumPopup = document.getElementById('impressum-popup');
+        const datenschutzLink = document.getElementById('datenschutz-link');
+        const impressumLink = document.getElementById('impressum-link');
+        const datenschutzClose = document.getElementById('datenschutz-close');
+        const impressumClose = document.getElementById('impressum-close');
+
+        // Zeigt das Datenschutz-Pop-up an
+        datenschutzLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            datenschutzPopup.style.display = 'flex';
+        });
+
+        // Zeigt das Impressum-Pop-up an
+        impressumLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            impressumPopup.style.display = 'flex';
+        });
+
+        // Schließt das Datenschutz-Pop-up
+        datenschutzClose.addEventListener('click', () => {
+            datenschutzPopup.style.display = 'none';
+        });
+
+        // Schließt das Impressum-Pop-up
+        impressumClose.addEventListener('click', () => {
+            impressumPopup.style.display = 'none';
+        });
+
+        // Schließt das Pop-up, wenn auf die Hintergrundfläche geklickt wird
+        datenschutzPopup.addEventListener('click', (event) => {
+            if (event.target === datenschutzPopup) {
+                datenschutzPopup.style.display = 'none';
+            }
+        });
+
+        impressumPopup.addEventListener('click', (event) => {
+            if (event.target === impressumPopup) {
+                impressumPopup.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
