@@ -94,6 +94,25 @@
             text-decoration: underline;
         }
 
+        .icon-credit {
+            font-size: 0.8em; /* Schriftgröße des "Icon von" Abschnitts verkleinern */
+            display: block; /* Zeile block anzeigen */
+            text-align: center; /* Zentriert den Text */
+            margin-top: 10px;
+            color: gray; /* Text grau färben */
+        }
+
+        .icon-credit a {
+            margin: 0; /* Zwischenraum zwischen "Icon von" und dem Link entfernen */
+            color: gray; /* Link grau färben */
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid gray; /* Querstrich grau färben */
+            margin: 10px 0; /* Abstand um den Querstrich */
+        }
+
         /* Pop-up Hintergrund */
         .popup {
             display: none;
@@ -148,6 +167,8 @@
         <a href="#" id="datenschutz-link">Datenschutz</a>
         <a href="#" id="impressum-link">Impressum</a>
         <a href="mailto:contact@lebaso.de">Kontakt</a>
+        <hr> <!-- Querstrich -->
+        <span class="icon-credit">Icondesign von <a href="http://www.freepik.com" target="_blank">freepik</a></span>
     </footer>
 
     <div class="popup" id="datenschutz-popup">
